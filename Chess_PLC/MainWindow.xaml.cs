@@ -20,6 +20,8 @@ namespace Chess_PLC
     /// </summary>
     public partial class MainWindow : Window
     {
+        bool gameWinOpen = false;
+        Object o = new Object();
         public MainWindow()
         {
             InitializeComponent();
@@ -27,7 +29,16 @@ namespace Chess_PLC
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Graphic.Game g = new Graphic.Game();
+            if (!gameWinOpen)
+            {
+                gameWinOpen = true;
+                Graphic.Game g = new Graphic.Game();
+                gameWinOpen = false;
+            }
+            else
+            {
+                new Task(() => { MessageBox.Show("Game window is open.", "Info"); }).Start();
+            }
         }
     }
 }
