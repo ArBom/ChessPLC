@@ -50,7 +50,7 @@ namespace Graphic
             // compile the shader program
             program = new ShaderProgram(VertexShader, FragmentShader);
             textures = new List<Texture>();
-            Texture tempT = new Texture("C://Users//arkad//source//repos//Chess_PLC//Chess_PLC//textures//stones.jpg");
+            Texture tempT = new Texture("C://Users//arkad//source//repos//Chess_PLC//Chess_PLC//textures//rounded-rocks.jpg");
             textures.Add(tempT);
             // set the view and projection matrix, which are static throughout this tutorial
             program.Use();
@@ -59,10 +59,11 @@ namespace Graphic
             program["view_matrix"].SetValue(Matrix4.LookAt(new Vector3(1, 4, 3), Vector3.Zero, new Vector3(0, 0, 1)));
 
             ground = new VBO<Vector3>(new Vector3[] {
-                new Vector3(-4, 4, -.1), new Vector3(4, 4, -.1), new Vector3(4, -4, -.1), new Vector3(-4, -4, -.1)
+                new Vector3(-4, -4, -.25), new Vector3(4, -4, -.25),
+                new Vector3(-4,  4, -.25), new Vector3(4,  4, -.25)
                             });
 
-            groundUV = new VBO<Vector2>(new Vector2[] { new Vector2(0, 1), new Vector2(1, 1), new Vector2(1, 0), new Vector2(0, 0) });
+            groundUV = new VBO<Vector2>(new Vector2[] { new Vector2(0, 1), new Vector2(1, 1), new Vector2(0, 0), new Vector2(1, 0) });
             groundQuads = new VBO<uint>(new uint[] { 0, 1, 2, 3 });
 
             chessboardP = new Chessboard();
@@ -138,6 +139,13 @@ namespace Graphic
             Gl.UseProgram(program);
             
             program["model_matrix"].SetValue(Matrix4.CreateRotationZ(yCamAngle) * Matrix4.CreateTranslation(new Vector3(0, 0, 0)));
+
+            Gl.BindBufferToShaderAttribute(ground, program, "vertexPosition");
+            Gl.BindBufferToShaderAttribute(groundUV, program, "vertexUV");
+            Gl.BindBuffer(groundQuads);
+            Gl.BindTexture(textures[0]);
+            // draw the cube
+            //Gl.DrawElements(BeginMode.Quads, groundQuads.Count, DrawElementsType.UnsignedInt, IntPtr.Zero);
 
             chessboardP.Draw(program);
             foreach (var c in chessmans)
