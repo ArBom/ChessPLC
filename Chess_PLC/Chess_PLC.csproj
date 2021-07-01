@@ -73,6 +73,7 @@
     <Compile Include="cs\Graphic\Chessboard.cs" />
     <Compile Include="cs\Graphic\Chessman.cs" />
     <Compile Include="cs\Graphic\Game.cs" />
+    <Compile Include="cs\Graphic\Knight.cs" />
     <Compile Include="cs\Graphic\Pawn.cs" />
     <Compile Include="cs\Rules\Chessman.cs" />
     <Compile Include="cs\Rules\State.cs" />

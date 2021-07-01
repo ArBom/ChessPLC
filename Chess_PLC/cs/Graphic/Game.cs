@@ -50,13 +50,13 @@ namespace Graphic
             // compile the shader program
             program = new ShaderProgram(VertexShader, FragmentShader);
             textures = new List<Texture>();
-            Texture tempT = new Texture("C://Users//arkad//source//repos//Chess_PLC//Chess_PLC//textures//rounded-rocks.jpg");
-            textures.Add(tempT);
+            //Texture tempT = new Texture("C://Users//arkad//source//repos//Chess_PLC//Chess_PLC//textures//rounded-rocks.jpg");
+            //textures.Add(tempT);
             // set the view and projection matrix, which are static throughout this tutorial
             program.Use();
             program["projection_matrix"].SetValue(Matrix4.CreatePerspectiveFieldOfView(0.45f, (float)width / height, 0.1f, 1000f));
 
-            program["view_matrix"].SetValue(Matrix4.LookAt(new Vector3(1, 4, 3), Vector3.Zero, new Vector3(0, 0, 1)));
+            program["view_matrix"].SetValue(Matrix4.LookAt(new Vector3(1, 2, 1.5), Vector3.Zero, new Vector3(0, 0, 1)));
 
             ground = new VBO<Vector3>(new Vector3[] {
                 new Vector3(-4, -4, -.25), new Vector3(4, -4, -.25),
@@ -67,7 +67,11 @@ namespace Graphic
             groundQuads = new VBO<uint>(new uint[] { 0, 1, 2, 3 });
 
             chessboardP = new Chessboard();
+
+            Knight k = new Knight();
+
             chessmans = new List<Chessman>();
+            chessmans.Add(k);
 
             watch = System.Diagnostics.Stopwatch.StartNew();
 
@@ -143,9 +147,7 @@ namespace Graphic
             Gl.BindBufferToShaderAttribute(ground, program, "vertexPosition");
             Gl.BindBufferToShaderAttribute(groundUV, program, "vertexUV");
             Gl.BindBuffer(groundQuads);
-            Gl.BindTexture(textures[0]);
-            // draw the cube
-            //Gl.DrawElements(BeginMode.Quads, groundQuads.Count, DrawElementsType.UnsignedInt, IntPtr.Zero);
+            //Gl.BindTexture(textures[0]);
 
             chessboardP.Draw(program);
             foreach (var c in chessmans)

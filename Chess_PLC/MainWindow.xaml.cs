@@ -21,7 +21,6 @@ namespace Chess_PLC
     public partial class MainWindow : Window
     {
         bool gameWinOpen = false;
-        Object o = new Object();
         public MainWindow()
         {
             InitializeComponent();
