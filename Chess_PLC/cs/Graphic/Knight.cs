@@ -36,16 +36,9 @@ namespace Graphic
                     6,7,20, 6,20,21, 5,20,1, 7,20,5, 21,4,0, 21,6,4, 20,21,22, 21,22,23, 22,23,24, 23,24,25, 24,25,26,
                     //grzbiet i uszy powyżej
                     3,1,13,  0,2,12, 13,1,20, 0,12,21, 13,20,19, 12,21,18, 25,26,28, 24,26,27, 18,25,28,
-                    19,24,27, 24,19,20, 25,21,18, 20,22,24, 21,23,25
+                    19,24,27, 18,21,23, 18,23,25, 19,22,24, 19,20,22
 
         }, BufferTarget.ElementArrayBuffer);
-
-        private static VBO<Vector3> Triangles = new VBO<Vector3>(new Vector3[] {
-                new Vector3(5, 0, 10), new Vector3(0, 0, .8), new Vector3(10, 10, -.8),
-        });
-
-        private static VBO<uint> Quads = new VBO<uint>(new uint[] {
-        0,1,2 });
 
         public override void Draw(ShaderProgram program)
         {
@@ -77,9 +70,9 @@ namespace Graphic
 
         ~Knight()
         {
-            Triangles.Dispose();
+            triangleElements.Dispose();
+            triangle.Dispose();
             Color.Dispose();
-            Quads.Dispose();
         }
     }
 }

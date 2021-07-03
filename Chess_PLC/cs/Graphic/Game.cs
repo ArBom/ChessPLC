@@ -20,7 +20,7 @@ namespace Graphic
         private static System.Diagnostics.Stopwatch watch;
         private static float angle;
         private static List<Texture> textures;
-        private static Texture crateTexture;
+        //private static Texture crateTexture;
         private static bool mouseDown = false;
         private static int downX, downY;
         private static float xCamAngle, yCamAngle;
@@ -68,7 +68,8 @@ namespace Graphic
 
             chessboardP = new Chessboard();
 
-            Knight k = new Knight();
+            //Knight k = new Knight();
+            King k = new King();
 
             chessmans = new List<Chessman>();
             chessmans.Add(k);

@@ -9,7 +9,7 @@ using OpenGL;
 
 namespace Graphic
 {
-    public enum Chessman_type { Pawn, Rock, Knight};
+    public enum Chessman_type { Pawn, Rock, Knight, King};
     //Dictionary<Chessman_type, string> Chessman_L = 
 
     public abstract class Chessman

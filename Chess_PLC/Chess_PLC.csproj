@@ -73,6 +73,7 @@
     <Compile Include="cs\Graphic\Chessboard.cs" />
     <Compile Include="cs\Graphic\Chessman.cs" />
     <Compile Include="cs\Graphic\Game.cs" />
+    <Compile Include="cs\Graphic\King.cs" />
     <Compile Include="cs\Graphic\Knight.cs" />
     <Compile Include="cs\Graphic\Pawn.cs" />
     <Compile Include="cs\Rules\Chessman.cs" />
@@ -111,6 +112,9 @@
   <ItemGroup>
     <Resource Include="textures\woodD.jpg" />
     <Resource Include="textures\woodL.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="textures\tkanina.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
