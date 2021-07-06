@@ -14,7 +14,7 @@ namespace Graphic
         Texture tempT = new Texture("..//..//textures//tkanina.jpg");
 
         private static VBO<Vector3> triangle = new VBO<Vector3>(new Vector3[] {
-                        new Vector3(0, 0, .46),
+            new Vector3(0, 0, .46),
             new Vector3(0, .023333, .4), new Vector3(0.009567, 0.021316, .4), new Vector3(0.01734, 0.016133, .4), new Vector3(0.022193, 0.00721, .4),  new Vector3(0.023201, -0.001572, .4),
             new Vector3(0.023206, -0.011667, .4), new Vector3(0.013717, -0.018877, .4),  new Vector3(0.00485, -0.022827, .4),
             new Vector3(-0.00485, -0.022823, .4), new Vector3(-0.013717, -0.018877, .4), new Vector3(-0.020207, -0.011667, .4), new Vector3(-0.023207, -0.002438, .4),
@@ -32,15 +32,15 @@ namespace Graphic
             0,1,2, 0,2,3, 0,3,4, 0,4,3, 0,5,4, 0,6,5, 0,7,6, 0,8,7, 0,9,8, 0,10,9, 0,11,10, 0,12,11, 0,13,12, 0,14,13, 0,15,14, 0,16,15, 0,1,16,
             17,18,48, 17,19,18, 17,20,19, 17,21,20, 17,22,21, 17,23,22, 17,24,23, 17,25,24, 17,26,25, 17,27,26, 17,28,27, 17,29,28, 17,30,29, 17,31,30, 17,32,31, 17,33,32, 17,34,33, 17,35,34, 17,36,35, 17,37,36, 17,38,37, 17,39,38, 17,40,39, 17,41,40, 17,42,41, 17,43,42, 17,44,43, 17,45,44, 17,46,45, 17,47,46, 17,48,47,
             18,48,49, 19,18,49, 20,19,49, 21,20,49, 22,21,49, 23,22,49, 24,23,49, 25,24,49, 26,25,49, 27,26,49, 28,27,49, 29,28,49, 30,29,49, 31,30,49, 32,31,49, 33,32,49, 34,33,49, 35,34,49, 36,35,49, 37,36,49, 38,37,49, 39,38,49, 40,39,49, 41,40,49, 42,41,49, 43,42,49, 44,43,49, 45,44,49, 46,45,49, 47,46,49, 48,47,49, 
-
         }, BufferTarget.ElementArrayBuffer);
 
         public override void Draw(ShaderProgram program)
         {
-            //DrawBase(program, 1.0f, 2.0f);
-            DrawCoping(program);
 
+            DrawCoping(program);
+            DrawBase(program, .1f, .4f);
         }
+
         protected override void DrawCoping(ShaderProgram program)
         {
             uint vertexPositionIndex = (uint)Gl.GetAttribLocation(program.ProgramID, "vertexPosition");

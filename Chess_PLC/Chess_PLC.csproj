@@ -77,6 +77,7 @@
     <Compile Include="cs\Graphic\Knight.cs" />
     <Compile Include="cs\Graphic\Pawn.cs" />
     <Compile Include="cs\Graphic\Queen.cs" />
+    <Compile Include="cs\Graphic\Rock.cs" />
     <Compile Include="cs\Rules\Chessman.cs" />
     <Compile Include="cs\Rules\State.cs" />
     <Compile Include="MainWindow.xaml.cs">

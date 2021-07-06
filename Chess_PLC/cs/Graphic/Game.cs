@@ -56,7 +56,7 @@ namespace Graphic
             program.Use();
             program["projection_matrix"].SetValue(Matrix4.CreatePerspectiveFieldOfView(0.45f, (float)width / height, 0.1f, 1000f));
 
-            program["view_matrix"].SetValue(Matrix4.LookAt(new Vector3(1, 2, 1.5), Vector3.Zero, new Vector3(0, 0, 1)));
+            program["view_matrix"].SetValue(Matrix4.LookAt(new Vector3(2, 3, 2), Vector3.Zero, new Vector3(0, 0, 1)));
 
             ground = new VBO<Vector3>(new Vector3[] {
                 new Vector3(-4, -4, -.25), new Vector3(4, -4, -.25),
@@ -68,9 +68,11 @@ namespace Graphic
 
             chessboardP = new Chessboard();
 
-            //Knight k = new Knight();
+            //Rock k = new Rock();
+            Knight k = new Knight();
             //King k = new King();
-            Queen k = new Queen();
+            //Queen k = new Queen();
+            //Rock k = new Rock();
 
             chessmans = new List<Chessman>();
             chessmans.Add(k);

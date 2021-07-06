@@ -42,9 +42,9 @@ namespace Graphic
 
         public override void Draw(ShaderProgram program)
         {
-            //DrawBase(program, 1.0f, 2.0f);
-            DrawCoping(program);
 
+            DrawCoping(program);
+            DrawBase(program, .1f, .15f);
         }
 
         protected override void DrawCoping(ShaderProgram program)
