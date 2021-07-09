@@ -68,6 +68,13 @@ namespace Graphic
             new Vector3(-0.43301, -0.25, 0.9), new Vector3(-0.47553, -0.15451, 0.9), new Vector3(-0.49726, -0.05226, 0.9), new Vector3(-0.49726, 0.05226, 0.9), new Vector3(-0.47553, 0.15451, 0.9), new Vector3(-0.43301, 0.25, 0.9), new Vector3(-0.37157, 0.33457, 0.9), new Vector3(-0.29389, 0.40451, 0.9), new Vector3(-0.20337, 0.45677, 0.9), new Vector3(-0.10396, 0.48907, 0.9),
         });
 
+        protected static VBO<Vector3> Base3 = new VBO<Vector3>(new Vector3[] {
+            new Vector3(0, 0, 1),
+
+            new Vector3(0, 0.85, 0.95), new Vector3(0.16583, 0.83367, 0.95), new Vector3(0.32528, 0.7853, 0.95), new Vector3(0.47223, 0.70675, 0.95), new Vector3(0.60104, 0.60104, 0.95), new Vector3(0.70675, 0.47223, 0.95), new Vector3(0.7853, 0.32528, 0.95), new Vector3(0.83367, 0.16583, 0.95), new Vector3(0.85, 0, 0.95), new Vector3(0.83367, -0.16583, 0.95), new Vector3(0.7853, -0.32528, 0.95), new Vector3(0.70675, -0.47223, 0.95), new Vector3(0.60104, -0.60104, 0.95), new Vector3(0.47223, -0.70675, 0.95), new Vector3(0.32528, -0.7853, 0.95), new Vector3(0.16583, -0.83367, 0.95), new Vector3(0, -0.85, 0.95), new Vector3(-0.16583, -0.83367, 0.95), new Vector3(-0.32528, -0.7853, 0.95), new Vector3(-0.47223, -0.70675, 0.95), new Vector3(-0.60104, -0.60104, 0.95), new Vector3(-0.70675, -0.47223, 0.95), new Vector3(-0.7853, -0.32528, 0.95), new Vector3(-0.83367, -0.16583, 0.95), new Vector3(-0.85, 0, 0.95), new Vector3(-0.83367, 0.16583, 0.95), new Vector3(-0.7853, 0.32528, 0.95), new Vector3(-0.70675, 0.47223, 0.95), new Vector3(-0.60104, 0.60104, 0.95), new Vector3(-0.47223, 0.70675, 0.95), new Vector3(-0.32528, 0.7853, 0.95), new Vector3(-0.16583, 0.83367, 0.95),
+
+            new Vector3(0, 0, .5),
+        });
 
         protected static VBO<uint> triangle1Elements = new VBO<uint>(new uint[] {
             1,2,33,32, 2,3,34,33, 3,4,35,34, 4,5,36,35, 5,6,37,36, 6,7,38,37, 7,8,39,38, 8,9,40,39, 9,10,41,40, 10,11,42,41, 11,12,43,42, 12,13,44,43, 13,14,45,44, 14,15,46,45, 15,16,47,46, 16,17,48,47, 17,18,49,48, 18,19,50,49, 19,20,51,50, 20,21,52,51, 21,22,53,52, 22,23,54,53, 23,24,55,54, 24,25,56,55, 25,26,57,56, 26,27,58,57, 27,28,59,58, 28,29,60,59, 29,30,61,60, 30,31,62,61,
@@ -83,7 +90,12 @@ namespace Graphic
             122,123,153,152, 123,124,154,153, 124,125,155,154, 125,126,156,155, 126,127,157,156, 127,128,158,157, 128,129,159,158, 129,130,160,159, 130,131,161,160, 131,132,162,161, 132,133,163,162, 133,134,164,163, 134,135,165,164, 135,136,166,165, 136,137,167,166, 137,138,168,167, 138,139,169,168, 139,140,170,169, 140,141,171,170, 141,142,172,171, 142,143,173,172, 143,144,174,173, 144,145,175,174, 145,146,176,175, 146,147,177,176, 147,148,178,177, 148,149,179,178, 149,150,180,179, 150,151,181,180, 122,151,181,152
         }, BufferTarget.ElementArrayBuffer);
 
-        protected void DrawBase(ShaderProgram program, float radius, float height)
+        protected static VBO<uint> triangle3Elements = new VBO<uint>(new uint[] {
+            0,1,2, 0,2,3, 0,3,4, 0,4,5, 0,5,6, 0,6,7, 0,7,8, 0,8,9, 0,9,10, 0,10,11, 0,11,12, 0,12,13, 0,13,14, 0,14,15, 0,15,16, 0,16,17, 0,17,18, 0,18,19, 0,19,20, 0,20,21, 0,21,22, 0,22,23, 0,23,24, 0,24,25, 0,25,26, 0,26,27, 0,27,28, 0,28,29, 0,29,30, 0,30,31, 0,31,1,
+            1,2,33, 2,3,33, 3,4,33, 4,5,33, 5,6,33, 6,7,33, 7,8,33, 8,9,33, 9,10,33, 10,11,33, 11,12,33, 12,13,33, 13,14,33, 14,15,33, 15,16,33, 16,17,33, 17,18,33, 18,19,33, 19,20,33, 20,21,33, 21,22,33, 22,23,33, 23,24,33, 24,25,33, 25,26,33, 26,27,33, 27,28,33, 28,29,33, 29,30,33, 30,31,33, 31,32,33,
+        }, BufferTarget.ElementArrayBuffer);
+
+        protected void DrawBase(ShaderProgram program, float radius, float height, bool cornice)
         {
             uint vertexPositionIndex = (uint)Gl.GetAttribLocation(program.ProgramID, "vertexPosition");
             Gl.EnableVertexAttribArray(vertexPositionIndex);
@@ -109,6 +121,18 @@ namespace Graphic
 
             program["model_matrix"].SetValue(Matrix4.CreateScaling(new Vector3(radius, radius, height)));
             Gl.DrawElements(BeginMode.Quads, triangle2Elements.Count, DrawElementsType.UnsignedInt, IntPtr.Zero);
+
+            if (cornice)
+            {
+                Gl.VertexAttribPointer(vertexPositionIndex, triangle3Elements.Size, Base3.PointerType, true, 12, IntPtr.Zero);
+
+                Gl.BindBuffer(triangle3Elements);
+
+                Gl.BindBufferToShaderAttribute(Base3, program, "vertexPosition");
+
+                program["model_matrix"].SetValue(Matrix4.CreateScaling(new Vector3(radius, radius, height)));
+                Gl.DrawElements(BeginMode.Triangles, triangle3Elements.Count, DrawElementsType.UnsignedInt, IntPtr.Zero);
+            }
         }
 
         protected virtual void DrawCoping(ShaderProgram program)

@@ -10,8 +10,6 @@ namespace Graphic
     {
         private static List<Texture> textures;
         private static VBO<Vector3> chessboardSquares;
-        //private static VBO<Vector3> whiteSBColor;
-        //private static VBO<Vector3> blackSBColor;
         private static VBO<uint> whiteSBQuads;
         private static VBO<uint> blackSBQuads;
         private static VBO<Vector2> chessboardUV;

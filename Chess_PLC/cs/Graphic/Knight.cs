@@ -44,7 +44,7 @@ namespace Graphic
         {
 
             DrawCoping(program);
-            DrawBase(program, .1f, .15f);
+            DrawBase(program, .1f, .15f, false);
         }
 
         protected override void DrawCoping(ShaderProgram program)

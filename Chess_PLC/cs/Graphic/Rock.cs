@@ -36,10 +36,9 @@ namespace Graphic
         }, BufferTarget.ElementArrayBuffer);
 
         public override void Draw(ShaderProgram program)
-        {
-            
+        { 
             DrawCoping(program);
-            DrawBase(program, .098f, .3f);
+            DrawBase(program, .098f, .28f, true);
         }
         protected override void DrawCoping(ShaderProgram program)
         {
