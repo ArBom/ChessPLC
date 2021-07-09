@@ -68,11 +68,11 @@ namespace Graphic
 
             chessboardP = new Chessboard();
 
-            //Rock k = new Rock();
-            Knight k = new Knight();
+            Rock k = new Rock();
+            //Knight k = new Knight();
             //King k = new King();
             //Queen k = new Queen();
-            //Rock k = new Rock();
+            //Pawn k = new Pawn();
 
             chessmans = new List<Chessman>();
             chessmans.Add(k);

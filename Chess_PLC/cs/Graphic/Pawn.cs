@@ -15,11 +15,11 @@ namespace Graphic
         Texture tempT = new Texture("..//..//textures//tkanina.jpg");
 
         private static VBO<Vector3> triangle = new VBO<Vector3>(new Vector3[] {
-            new Vector3(0, 0, .46),
-            new Vector3(0, .023333, .4), new Vector3(0.009567, 0.021316, .4), new Vector3(0.01734, 0.016133, .4), new Vector3(0.022193, 0.00721, .4),  new Vector3(0.023201, -0.001572, .4),
-            new Vector3(0.023206, -0.011667, .4), new Vector3(0.013717, -0.018877, .4),  new Vector3(0.00485, -0.022827, .4),
-            new Vector3(-0.00485, -0.022823, .4), new Vector3(-0.013717, -0.018877, .4), new Vector3(-0.020207, -0.011667, .4), new Vector3(-0.023207, -0.002438, .4),
-            new Vector3(-0.022193, 0.00721, .4), new Vector3(-0.01734, 0.015613, .4), new Vector3(-0.009563, 0.021317, .4), new Vector3(0, 0.023333, .4),
+            new Vector3(0, 0, .23),
+            new Vector3(0, .023333, .19), new Vector3(0.009567, 0.021316, .15), new Vector3(0.01734, 0.016133, .15), new Vector3(0.022193, 0.00721, .15),  new Vector3(0.023201, -0.001572, .15),
+            new Vector3(0.023206, -0.011667, .19), new Vector3(0.013717, -0.018877, .15),  new Vector3(0.00485, -0.022827, .15),
+            new Vector3(-0.00485, -0.022823, .19), new Vector3(-0.013717, -0.018877, .15), new Vector3(-0.020207, -0.011667, .15), new Vector3(-0.023207, -0.002438, .15),
+            new Vector3(-0.022193, 0.00721, .19), new Vector3(-0.01734, 0.015613, .15), new Vector3(-0.009563, 0.021317, .15), new Vector3(0, 0.023333, .15),
         });
 
         private static VBO<uint> triangleElements = new VBO<uint>(new uint[] {
@@ -29,7 +29,7 @@ namespace Graphic
         public override void Draw(ShaderProgram program)
         {
             DrawCoping(program);
-            DrawBase(program, 0.1f, .25f);
+            DrawBase(program, 0.085f, .2f);
 
         }
 

@@ -14,35 +14,32 @@ namespace Graphic
         Texture tempT = new Texture("..//..//textures//tkanina.jpg");
 
         private static VBO<Vector3> triangle = new VBO<Vector3>(new Vector3[] {
-            new Vector3(0, 0, .35),
-            new Vector3(0, .023333, .35), new Vector3(0.009567, 0.021316, .35), new Vector3(0.01734, 0.016133, .35), new Vector3(0.022193, 0.00721, .35),  new Vector3(0.023201, -0.001572, .35),
-            new Vector3(0.023206, -0.011667, .35), new Vector3(0.013717, -0.018877, .35),  new Vector3(0.00485, -0.022827, .35),
-            new Vector3(-0.00485, -0.022823, .35), new Vector3(-0.013717, -0.018877, .35), new Vector3(-0.020207, -0.011667, .35), new Vector3(-0.023207, -0.002438, .35),
-            new Vector3(-0.022193, 0.00721, .35), new Vector3(-0.01734, 0.015613, .35), new Vector3(-0.009563, 0.021317, .35), new Vector3(0, 0.023333, .35),
+            new Vector3(0, 0, .37),
 
-            new Vector3(0, .023333, .4), new Vector3(0.009567, 0.021316, .4), new Vector3(0.01734, 0.016133, .4), new Vector3(0.022193, 0.00721, .4),  new Vector3(0.023201, -0.001572, .4),
-            new Vector3(0.023206, -0.011667, .4), new Vector3(0.013717, -0.018877, .4),  new Vector3(0.00485, -0.022827, .4),
-            new Vector3(-0.00485, -0.022823, .4), new Vector3(-0.013717, -0.018877, .4), new Vector3(-0.020207, -0.011667, .4), new Vector3(-0.023207, -0.002438, .4),
-            new Vector3(-0.022193, 0.00721, .4), new Vector3(-0.01734, 0.015613, .4), new Vector3(-0.009563, 0.021317, .4), new Vector3(0, 0.023333, .4),
+            new Vector3(0, 0.065, 0.37), new Vector3(0.0325, 0.05629, 0.37), new Vector3(0.05629, 0.0325, 0.37), new Vector3(0.065, 0, 0.37), new Vector3(0.05629, -0.0325, 0.37), new Vector3(0.0325, -0.05629, 0.37), new Vector3(0, -0.065, 0.37), new Vector3(-0.0325, -0.05629, 0.37), new Vector3(-0.05629, -0.0325, 0.37), new Vector3(-0.065, 0, 0.37), new Vector3(-0.05629, 0.0325, 0.37), new Vector3(-0.0325, 0.05629, 0.37),
+            new Vector3(0, 0.065, 0.45), new Vector3(0.0325, 0.05629, 0.45), new Vector3(0.05629, 0.0325, 0.45), new Vector3(0.065, 0, 0.45), new Vector3(0.05629, -0.0325, 0.45), new Vector3(0.0325, -0.05629, 0.45), new Vector3(0, -0.065, 0.45), new Vector3(-0.0325, -0.05629, 0.45), new Vector3(-0.05629, -0.0325, 0.45), new Vector3(-0.065, 0, 0.45), new Vector3(-0.05629, 0.0325, 0.45), new Vector3(-0.0325, 0.05629, 0.45),
+            new Vector3(0, 0.085, 0.45), new Vector3(0.0425, 0.07361, 0.45), new Vector3(0.07361, 0.0425, 0.45), new Vector3(0.085, 0, 0.45), new Vector3(0.07361, -0.0425, 0.45), new Vector3(0.0425, -0.07361, 0.45), new Vector3(0, -0.085, 0.45), new Vector3(-0.0425, -0.07361, 0.45), new Vector3(-0.07361, -0.0425, 0.45), new Vector3(-0.085, 0, 0.45), new Vector3(-0.07361, 0.0425, 0.45), new Vector3(-0.0425, 0.07361, 0.45),
+            new Vector3(0, 0.075, 0.33), new Vector3(0.0375, 0.06495, 0.33), new Vector3(0.06495, 0.0375, 0.33), new Vector3(0.075, 0, 0.33), new Vector3(0.06495, -0.0375, 0.33), new Vector3(0.0375, -0.06495, 0.33), new Vector3(0, -0.075, 0.33), new Vector3(-0.0375, -0.06495, 0.33), new Vector3(-0.06495, -0.0375, 0.33), new Vector3(-0.075, 0, 0.33), new Vector3(-0.06495, 0.0375, 0.33), new Vector3(-0.0375, 0.06495, 0.33),
 
-            new Vector3(0, .07, .4), new Vector3(0.01455, 0.068467, .4), new Vector3(0.02847, 0.06395, .4), new Vector3(0.04115, 0.05663, .4), new Vector3(0.05202, 0.0484, .4), new Vector3(0.06062, 0.035, .4), new Vector3(0.06658, 0.02163, .4), new Vector3(0.06962, 0.004715, .4), new Vector3(0.06962, -0.004715, .4),
-            new Vector3(0.06658, -0.02163, .4), new Vector3(0.06062, -0.035, .4), new Vector3(0.05202, -0.04684, .4), new Vector3(0.04115, -0.05663, .4), new Vector3(0.02847, -0.06545, .4), new Vector3(0.01455, -0.06848, .4), new Vector3(0, -0.07, .4),
-            new Vector3(-0.01455, -0.06847, .4), new Vector3(-0.02843, -0.06395, .4), new Vector3(-0.04115, -0.05663, .4), new Vector3(-0.05202, -0.04684, .4), new Vector3(-0.06062, -0.035, .4), new Vector3(-0.06658, -0.02163, .4), new Vector3(-0.06962, -0.007315, .4), new Vector3(-0.06962, 0.007315, .4),
-            new Vector3(-0.06658, 0.02163, .4), new Vector3(-0.06062, 0.035, .4), new Vector3(-0.05202, 0.04684, .4), new Vector3(-0.04115, 0.05663, .4), new Vector3(-0.02869, 0.06395, .4), new Vector3(-0.01019, 0.06847, .4), new Vector3(0, 0.07, .4),
-
+            new Vector3(0, 0, .2),
         });
 
-        private static VBO<uint> triangleElements = new VBO<uint>(new uint[] {
-            0,1,2, 0,2,3, 0,3,4, 0,4,3, 0,5,4, 0,6,5, 0,7,6, 0,8,7, 0,9,8, 0,10,9, 0,11,10, 0,12,11, 0,13,12, 0,14,13, 0,15,14, 0,16,15, 0,1,16,
-            1,17,18, 1,2,18,  3,4,19, 4,19,20,  5,6,22, 5,22,21,  8,7,24, 7,24,23,  9,10,25, 10,25,26,  11,12,27, 12,27,28,  13,14,29, 14,29,30,
 
+        private static VBO<uint> quadsElements = new VBO<uint>(new uint[] {
+            0,1,2,3, 0,3,4,5, 0,5,6,7, 0,7,8,9, 0,9,10,11, 0,11,12,1,
+            1,2,14,13, 2,3,15,14, 4,5,17,16, 5,6,18,17, 7,8,20,19, 8,9,21,20, 10,11,23,22, 11,12,24,23,
+            14,13,25,26, 15,14,26,27, 17,16,28,29, 18,17,29,30, 20,19,31,32, 21,20,32,33, 23,22,34,35, 24,23,35,36,
+            3,4,40,39, 6,7,43,42, 9,10,46,45, 12,1,37,48,
+            1,13,25,37, 3,15,27,39, 4,16,28,40, 6,18,30,42, 7,19,31,43, 9,21,33,45, 10,22,34,46, 12,24,36,48,
+            37,38,26,25, 38,39,27,26, 40,41,29,28, 41,42,30,29, 43,44,32,31, 44,45,33,32, 46,47,35,34, 47,48,36,35,
+            49,48,47,46, 49,46,45,44, 49,44,43,42, 49,42,41,40, 49,40,39,38, 49,38,37,48,
         }, BufferTarget.ElementArrayBuffer);
 
         public override void Draw(ShaderProgram program)
         {
             
             DrawCoping(program);
-            DrawBase(program, .1f, 2.0f);
+            DrawBase(program, .098f, .3f);
         }
         protected override void DrawCoping(ShaderProgram program)
         {
@@ -53,10 +50,10 @@ namespace Graphic
             Gl.BindBuffer(triangle);
             Gl.VertexAttribPointer(vertexPositionIndex, triangle.Size, triangle.PointerType, true, 12, IntPtr.Zero);
 
-            Gl.BindBuffer(triangleElements);
+            Gl.BindBuffer(quadsElements);
 
             // draw the triangle
-            Gl.DrawElements(BeginMode.Triangles, triangleElements.Count, DrawElementsType.UnsignedInt, IntPtr.Zero);
+            Gl.DrawElements(BeginMode.Quads, quadsElements.Count, DrawElementsType.UnsignedInt, IntPtr.Zero);
         }
 
         public Rock()
@@ -67,7 +64,7 @@ namespace Graphic
 
         ~Rock()
         {
-            triangleElements.Dispose();
+            quadsElements.Dispose();
             triangle.Dispose();
         }
 
